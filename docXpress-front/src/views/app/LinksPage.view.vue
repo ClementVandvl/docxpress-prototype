@@ -8,7 +8,6 @@
           <h3 class="overflow-ellipsis">
             {{ link.filename }}
           </h3>
-          <FileBadge :entry-type="link.type" />
           <a :href="link.targetUrl" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon :icon="faShare" />
           </a>
@@ -26,6 +25,9 @@
             })
           }}
         </span>
+        <div class="d-flex mt-2">
+          <FileBadge :entry-type="link.type" />
+        </div>
       </div>
     </div>
     <div v-else class="mt-4">
