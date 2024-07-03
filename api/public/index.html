@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Ephemeral Link</title>
+</head>
+<body>
+    <h1>Create an Ephemeral Link</h1>
+    <form action="/create" method="post">
+        <label for="target_url">Target URL:</label><br>
+        <input type="text" id="target_url" name="target_url" required><br><br>
+        <label for="expiration_minutes">Expiration Time (in minutes):</label><br>
+        <input type="number" id="expiration_minutes" name="expiration_minutes" min="1" required><br><br>
+        <input type="submit" value="Create Link">
+    </form>
+</body>
+</html>
+
