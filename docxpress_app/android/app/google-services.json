@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "989267613866",
+    "firebase_url": "https://docxpress-77939-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "docxpress-77939",
+    "storage_bucket": "docxpress-77939.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:989267613866:android:95bf051f9a93bbc31418d3",
+        "android_client_info": {
+          "package_name": "com.docxpress"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs7Bumy_95OeuZaMLMZPfwKUSQ1LGhmNI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
