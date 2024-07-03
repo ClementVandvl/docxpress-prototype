@@ -5,7 +5,7 @@
       <div v-for="link in links" :key="link.filename" class="mt-4 link-container">
         <div class="d-flex gap-2 mb-1">
           <FontAwesomeIcon class="copy-icon" :icon="faCopy" @click="copyLink(link)" />
-          <h3>
+          <h3 class="overflow-ellipsis">
             {{ link.filename }}
           </h3>
           <FileBadge :entry-type="link.type" />
@@ -98,6 +98,12 @@
 </script>
 
 <style scoped lang="scss">
+  .overflow-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .link-wrapper {
     display: grid;
     gap: 16px;
