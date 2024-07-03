@@ -1,0 +1,60 @@
+/*
+  -- Colors used in projet--
+  -- Use BEM Convention in order to name SCSS elements --
+*/
+
+//- Popsell Theme
+$primary__color: #eb622e;
+$secondary__color: #000933;
+$secondary__soft_color: hsl(198, 100%, 28%);
+$text__color: #0a0a0a;
+$theme__light__ui__primary: #ffffff;
+$theme__light__ui__contrast: #f3f3f9;
+
+//- Velzon Theme
+$blue: #3577f1;
+$indigo: #003f5a;
+$purple: #6559cc;
+$pink: #f672a7;
+$red: #f06548;
+$orange: #f1963b;
+$yellow: #f7b84b;
+$green: #0ab39c;
+$teal: #02a8b5;
+$cyan: #299cdb;
+
+//-Gray shades
+$white: #fff;
+$gray__100: #f3f6f9;
+$gray__200: #eff2f7;
+$gray__300: #e9ebec;
+$gray__400: #ced4da;
+$gray__500: #adb5bd;
+$gray__600: #878a99;
+$gray__700: #495057;
+$gray__800: #343a40;
+$gray__900: #212529;
+$black: #000;
+
+//- Alerts
+$primary: $indigo;
+$secondary: $blue;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray__100;
+$dark: $gray__900;
+
+//- Vertical Menu Colors
+$theme__light__vertical__menu__bg__color: $indigo;
+$theme__light__vertical__menu__item__color: $gray__500;
+$theme__light__vertical__menu__item__hover__color: $white;
+$theme__light__vertical__menu__item__active__color: $white;
+$theme__light__vertical__menu__sub__item__color: darken($gray__400, 4%);
+$theme__light__vertical__menu__sub__item__hover__color: $white;
+$theme__light__vertical__menu__sub__item__active__color: $white;
+$theme__light__vertical__menu__title__color: darken($gray__400, 16%);
+
+//- Card colors
+$theme__light__card__bg__color: $white;

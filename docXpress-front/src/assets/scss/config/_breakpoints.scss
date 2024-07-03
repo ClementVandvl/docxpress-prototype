@@ -1,0 +1,21 @@
+/*
+  -- Breakpoints of the project--
+  -- Use BEM Convention in order to name SCSS elements --
+*/
+
+$grid__breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$container__max__widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+);

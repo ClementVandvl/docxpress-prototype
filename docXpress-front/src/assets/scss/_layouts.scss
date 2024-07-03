@@ -1,0 +1,143 @@
+$vertical__menu__width: 250px;
+$topbar_height: 70px;
+
+.link {
+  text-decoration: underline;
+  color: inherit;
+  cursor: pointer;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.powerbi-slicers {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: $spacer__md;
+  align-items: stretch;
+  margin-top: $spacer__md;
+
+  & > * {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: map-get($grid__breakpoints, 'md')) {
+  .powerbi-slicers {
+    & > * {
+      max-width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: map-get($grid__breakpoints, 'sm')) {
+  .powerbi-slicers {
+    & > * {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.powerbi-date-and-toggle-filter {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: map-get($grid__breakpoints, 'sm')) {
+  .powerbi-date-and-toggle-filter {
+    flex-direction: column;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $gutter__x;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: $theme__light__card__bg__color;
+  background-clip: border-box;
+  border-radius: 0.25 * $spacer;
+  box-shadow: 0 1px 2px rgb(56 65 74 / 15%);
+  transition: all 0.25s ease-in-out;
+
+  .card-header {
+    padding: $spacer;
+    border-bottom: 1px solid $gray__300;
+  }
+
+  .card-tab {
+    border-bottom: 1px solid $gray__300;
+    display: flex;
+
+    .tab {
+      padding: $spacer;
+      cursor: pointer;
+      position: relative;
+
+      &.active::before {
+        border: 1px solid $secondary__soft_color;
+        width: 100%;
+        left: 0;
+      }
+    }
+
+    .tab::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      transition:
+        width 0.3s ease,
+        left 0.3s ease;
+    }
+  }
+
+  .card-body {
+    flex: 1 1 auto;
+    padding: $spacer;
+  }
+
+  .card-footer {
+    padding: $spacer;
+    border-top: 1px dashed $gray__300;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    flex-grow: 1;
+  }
+
+  &.hoverable:hover {
+    transform: translate3d(0, -3px, 0);
+    box-shadow: 0 3px 5px rgb(56 65 74 / 15%);
+  }
+}

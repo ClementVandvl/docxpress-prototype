@@ -1,0 +1,56 @@
+/*
+  -- Margins used in projet--
+  -- Use BEM Convention in order to name SCSS elements --
+*/
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+$spacer__none: map-get($spacers, 0);
+$spacer__sm: map-get($spacers, 1);
+$spacer__md: map-get($spacers, 2);
+$spacer__lg: map-get($spacers, 3);
+$spacer__xl: map-get($spacers, 4);
+$spacer__xxl: map-get($spacers, 5);
+
+@each $s, $value in $spacers {
+  // -- Margins
+  .mt-#{$s} {
+    margin-top: $value;
+  }
+  .mb-#{$s} {
+    margin-bottom: $value;
+  }
+  .ml-#{$s} {
+    margin-left: $value;
+  }
+  .mr-#{$s} {
+    margin-right: $value;
+  }
+
+  // -- Paddings
+  .pt-#{$s} {
+    padding-top: $value;
+  }
+  .pb-#{$s} {
+    padding-bottom: $value;
+  }
+  .pl-#{$s} {
+    padding-left: $value;
+  }
+  .pr-#{$s} {
+    padding-right: $value;
+  }
+
+  // Gaps
+  .gap-#{$s} {
+    gap: $value;
+  }
+}

@@ -1,0 +1,123 @@
+/*
+  -- Grid system used in projet--
+  -- Based on Bootstrap v5 Flexbox grid. Rebooted by Popsell.
+  -- Use BEM Convention in order to name SCSS elements --
+*/
+@use 'sass:math';
+
+$gutter__x: 1.5rem;
+$gutter__y: 0;
+$grid__gutter__width: 1rem;
+$grid__columns: 12;
+
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  width: 100%;
+  padding-right: $gutter__x * 0.5;
+  padding-left: $gutter__x * 0.5;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -1 * $gutter__y;
+  margin-right: -0.5 * $gutter__x;
+  margin-left: -0.5 * $gutter__x;
+}
+
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: $gutter__x * 0.5;
+  padding-left: $gutter__x * 0.5;
+  margin-top: $gutter__y;
+}
+
+.col {
+  flex: 1 0 0%;
+}
+
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+// -- Create the containers following breakpoints values.
+@mixin build-containers() {
+  @each $breakpoint, $value in $container__max__widths {
+    @media (min-width: map-get($grid__breakpoints, $breakpoint)) {
+      .container-#{$breakpoint},
+      .container {
+        max-width: $value;
+      }
+    }
+  }
+}
+
+// -- Build the grid system classes.
+@mixin build-grid-system() {
+  @include build-containers();
+  @for $i from 1 through $grid__columns {
+    $unit: math.div(100%, $grid__columns);
+    $size: $i * $unit;
+    .col-#{$i} {
+      flex: 0 0 auto;
+      width: $size;
+    }
+
+    .offset-#{$i} {
+      margin-left: $size;
+    }
+  }
+  @each $breakpoint, $value in $grid__breakpoints {
+    @media (min-width: #{$value}) {
+      @for $i from 1 through $grid__columns {
+        $unit: math.div(100%, $grid__columns);
+        $size: $i * $unit;
+
+        .col-#{$breakpoint}-#{$i} {
+          flex: 0 0 auto;
+          width: $size;
+        }
+
+        .offset-#{$breakpoint}-#{$i} {
+          margin-left: $size;
+        }
+      }
+      .col-#{$breakpoint}-auto {
+        flex: 0 0 auto;
+        width: auto;
+      }
+    }
+
+    @container (min-width: #{$value}) {
+      @for $i from 1 through $grid__columns {
+        $unit: math.div(100%, $grid__columns);
+        $size: $i * $unit;
+
+        .parent-col-#{$breakpoint}-#{$i} {
+          flex: 0 0 auto;
+          width: $size;
+        }
+
+        .parent-offset-#{$breakpoint}-#{$i} {
+          margin-left: $size;
+        }
+      }
+      .parent-col-#{$breakpoint}-auto {
+        flex: 0 0 auto;
+        width: auto;
+      }
+    }
+  }
+}
+
+@include build-grid-system();

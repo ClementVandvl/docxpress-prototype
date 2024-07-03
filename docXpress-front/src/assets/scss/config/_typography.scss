@@ -1,0 +1,63 @@
+/*
+  -- Typography rules used in projet--
+  -- Use BEM Convention in order to name SCSS elements --
+*/
+
+//- Font Families
+$font__family__primary: 'Poppins', sans-serif;
+$font__family__secondary: 'hkgrotesk', sans-serif;
+$font__family__monospace: 'Menlo', 'Courrier New', monospace;
+
+$font__family__base: $font__family__primary;
+$font__family__code: $font__family__monospace;
+
+//- Font Sizes
+$font__size__root: 16px;
+$font__size__base: 0.8125rem;
+$font__size__sm: $font__size__base * 0.875;
+$font__size__lg: $font__size__base * 1.25;
+$font__size__xl: $font__size__base * 2;
+$font__size__xxl: $font__size__base * 4;
+
+$font__size__sub: 0.75em;
+$code__font_size: $font__size__sm;
+
+//- Font Weights
+$font__weight__lighter: lighter;
+$font__weight__light: 300;
+$font__weight__normal: 400;
+$font__weight__medium: 500;
+$font__weight__semibold: 600;
+$font__weight__bold: 700;
+$font__weight__bolder: bolder;
+
+$font__weight__base: $font__weight__normal;
+$dt__font__weight: $font__weight__semibold;
+
+//- Line Heights
+$line__height__base: 1.5;
+$line__height__sm: 1.25;
+$line__height__lg: 2;
+
+//- Heading
+$heading__font__family: $font__family__primary;
+$heading__font__weight: $font__weight__medium;
+$heading__line_height: 1.2;
+$heading__color: $gray__700;
+
+$h1__font__size: $font__size__base * 2.5;
+$h2__font__size: $font__size__base * 2;
+$h3__font__size: $font__size__base * 1.75;
+$h4__font__size: $font__size__base * 1.5;
+$h5__font__size: $font__size__base * 1.25;
+$h6__font__size: $font__size__base;
+
+//- Link
+$link__color: $primary__color;
+$link__hover__color: $primary__color;
+$link__decoration: underline;
+$link__hover__decoration: null;
+$link__shade__percentage: 20%;
+
+//- Various text configs
+$text__muted: $gray__600;

@@ -1,0 +1,151 @@
+//-- Base SCSS file. Apply general styling on the project. --//
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  white-space: normal;
+}
+
+html,
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+body {
+  font-size: $font__size__base;
+  background-color: $theme__light__ui__contrast;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: $heading__color;
+  font-family: $font__family__primary;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+label {
+  font-size: $font__size__sm;
+}
+
+b,
+strong {
+  font-weight: $font__weight__semibold;
+}
+
+.blockquote {
+  padding: 10px 20px;
+  border-left: 4px solid $gray__300;
+}
+
+.blockquote-reverse {
+  border-left: 0;
+  border-right: 4px solid $gray__300;
+  text-align: right;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  margin: $spacer__lg 0;
+}
+
+legend {
+  font-size: $font__size__sm;
+  font-weight: 500;
+  color: $gray__600;
+  text-transform: uppercase;
+}
+
+button.reset {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.form-group {
+  margin: 0 0 $spacer__md 0;
+  gap: 0 $spacer__lg;
+
+  .form-input {
+    width: 50%;
+
+    &.alone {
+      padding-right: 8px;
+    }
+  }
+
+  .form-input-area {
+    width: 100%;
+  }
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-half {
+  width: 50%;
+}
+
+.timestamps {
+  flex-wrap: wrap;
+
+  & > span {
+    position: relative;
+    margin-right: $spacer__lg;
+    padding-left: $spacer__md;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 4px;
+      height: 4px;
+      transform: translate3d(0, -50%, 0);
+      border-radius: 50%;
+      background-color: $gray__500;
+    }
+  }
+
+  .timestamps-value {
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: map-get($grid__breakpoints, 'sm')) {
+  .form-group {
+    display: flex;
+    width: 100%;
+    gap: $spacer__md 0;
+    flex-direction: column;
+
+    .form-input {
+      width: 100%;
+
+      &.alone {
+        padding-right: 0;
+      }
+    }
+  }
+}
