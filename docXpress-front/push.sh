@@ -8,10 +8,11 @@ IMAGE_NAME="docxpress-front"
 DOCKERFILE="prod.Dockerfile"
 PORT=1234
 
-# Connect to SSH, cd to the directory, and pull the latest changes
+mv node_modules dist /tmp
+scp -r * $USER@$HOST:/home/quentin/$DIRECTORY
+mv /tmp/node_modules /tmp/dist .
 ssh $USER@$HOST << EOF
     cd $DIRECTORY
-    git pull
     docker stop $IMAGE_NAME
     docker rm $IMAGE_NAME
     docker build -t $IMAGE_NAME -f $DOCKERFILE .
