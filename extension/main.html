@@ -1,20 +1,38 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <link rel="stylesheet" href="main.css">
-    <title>
-        Autofill Form
-    </title>
+    <title>Autofill Form</title>
 </head>
 <body>
     <button class="button-82-pushable" role="button" id="fill-form">
         <span class="button-82-shadow"></span>
         <span class="button-82-edge"></span>
-        <span class="button-82-front text">
-        Fill Form
-      </span>
+        <span class="button-82-front text">Fill Form</span>
     </button>
+
+    <div id="id_card_container" class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-inner" id="id_card_carousel_inner"></div>
+            <button class="carousel-button prev" onclick="moveCarousel(-1, 'id_card_carousel_inner')">&#10094;</button>
+            <button class="carousel-button next" onclick="moveCarousel(1, 'id_card_carousel_inner')">&#10095;</button>
+        </div>
+    </div>
+    <div id="passport_container" class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-inner" id="passport_carousel_inner"></div>
+            <button class="carousel-button prev" onclick="moveCarousel(-1, 'passport_carousel_inner')">&#10094;</button>
+            <button class="carousel-button next" onclick="moveCarousel(1, 'passport_carousel_inner')">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Add the submit button here -->
+    <button class="button-82-pushable" role="button" id="submit-images">
+        <span class="button-82-shadow"></span>
+        <span class="button-82-edge"></span>
+        <span class="button-82-front text">Submit Images</span>
+    </button>
+
     <script src="popup.js"></script>
 </body>
 </html>
